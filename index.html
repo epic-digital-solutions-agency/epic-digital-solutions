@@ -280,8 +280,8 @@
     .small-note {
       margin-top: 36px;
       text-align: center;
-      color: #e2e8f0; /* Brighter, crisper text color */
-      font-size: 16px; /* Increased font size */
+      color: #e2e8f0;
+      font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.2px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -537,18 +537,18 @@
   <section class="contact-section" id="contact">
     <div class="section-inner">
       <h2>Request a Free Quote</h2>
-      <form>
+      <form action="https://formspree.io/f/xknpndpk" method="POST">
         <label for="name">Your Name</label>
-        <input id="name" type="text" placeholder="Your Name" required />
+        <input id="name" name="name" type="text" placeholder="Your Name" required />
 
         <label for="phone">Phone Number</label>
-        <input id="phone" type="tel" placeholder="Phone Number" required />
+        <input id="phone" name="phone" type="tel" placeholder="Phone Number" required />
 
         <label for="email">Email Address</label>
-        <input id="email" type="email" placeholder="Email Address" required />
+        <input id="email" name="email" type="email" placeholder="Email Address" required />
 
         <label for="service">What do you need help with?</label>
-        <select id="service" required>
+        <select id="service" name="service" required>
           <option value="">Select a service</option>
           <option>Website Creation</option>
           <option>Digital Invitation</option>
@@ -559,7 +559,7 @@
         </select>
 
         <label for="message">Project Details</label>
-        <textarea id="message" rows="5" placeholder="Tell us about your project"></textarea>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
 
         <button type="submit">Send Request</button>
       </form>
