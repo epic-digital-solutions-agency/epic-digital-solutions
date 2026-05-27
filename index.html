@@ -12,16 +12,16 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
+      background: #0f172a; /* Deep dark slate background for the whole site */
+      color: #f1f5f9; /* Crisp light text for easy reading */
       line-height: 1.6;
     }
 
     /* Combined Hero and Feature section into one massive premium background */
     .hero-showcase-bg {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      background: linear-gradient(135deg, #020617 0%, #1e3a8a 100%);
       color: white;
-      padding: 80px 20px 80px 20px; /* Increased bottom padding */
+      padding: 80px 20px 80px 20px;
       text-align: center;
       border-bottom: 1px solid #1e293b;
     }
@@ -73,12 +73,11 @@
       border-radius: 16px;
       display: block;
       margin: 0 auto;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      object-fit: contain; /* Ensures the whole image scales without cropping */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
     }
@@ -87,7 +86,7 @@
       text-align: center;
       font-size: 32px;
       font-weight: 700;
-      color: #0f172a;
+      color: #fff;
       margin-bottom: 40px;
       position: relative;
     }
@@ -108,39 +107,45 @@
       gap: 25px;
     }
 
+    /* Premium Dark Mode Cards */
     .card {
-      background: white;
+      background: #1e293b;
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid #334155;
       transition: all 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      border-color: #bfdbfe;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+      border-color: #3b82f6; /* Glows electric blue on hover */
     }
 
     .card h3 {
       margin-top: 0;
-      color: #1e3a8a;
+      color: #60a5fa; /* Vibrant modern blue for titles */
       font-size: 20px;
       font-weight: 700;
     }
 
     .card p {
-      color: #475569;
+      color: #94a3b8;
       font-size: 15px;
     }
 
+    .card p strong {
+      color: #3b82f6; /* Highlights pricing */
+    }
+
+    /* Dark Mode About Section */
     .about {
-      background: white;
+      background: #1e293b;
       border-radius: 16px;
       padding: 35px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid #334155;
       max-width: 800px;
       margin: auto;
       text-align: center;
@@ -148,16 +153,17 @@
 
     .about p {
       font-size: 17px;
-      color: #334155;
+      color: #cbd5e1;
       line-height: 1.8;
     }
 
+    /* Dark Mode Form Styling */
     form {
-      background: white;
+      background: #1e293b;
       padding: 40px;
       border-radius: 16px;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid #334155;
       max-width: 600px;
       margin: auto;
     }
@@ -167,19 +173,30 @@
       padding: 12px 16px;
       margin-bottom: 20px;
       border-radius: 8px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #475569;
       font-size: 16px;
       font-family: inherit;
-      background: #f8fafc;
+      background: #0f172a; /* Dark inputs */
+      color: white;
       box-sizing: border-box;
       transition: all 0.2s;
     }
 
     input:focus, select:focus, textarea:focus {
       outline: none;
-      border-color: #2563eb;
-      background: white;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+      border-color: #3b82f6;
+      background: #0f172a;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+    }
+
+    /* Fix dropdown arrow color visibility in dark mode */
+    select {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8'><path d='M1 4l4 4 4-4'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
     }
 
     button {
@@ -202,12 +219,13 @@
     }
 
     footer {
-      background: #0f172a;
-      color: #94a3b8;
+      background: #020617; /* Extra dark footer */
+      color: #64748b;
       text-align: center;
       padding: 40px 20px;
-      margin-top: 60px;
+      margin-top: 80px;
       font-size: 14px;
+      border-top: 1px solid #1e293b;
     }
 
     footer p {
@@ -287,4 +305,14 @@
 
       <textarea rows="5" placeholder="Tell us about your project"></textarea>
 
-      <button type="
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Epic Digital Solutions. All rights reserved.</p>
+    <p>Powered by the Epic brand.</p>
+  </footer>
+
+</body>
+</html>
