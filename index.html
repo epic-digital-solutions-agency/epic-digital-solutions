@@ -17,22 +17,24 @@
       line-height: 1.6;
     }
 
-    header {
+    /* Combined Hero and Feature section into one massive premium background */
+    .hero-showcase-bg {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
       color: white;
-      padding: 80px 20px;
+      padding: 80px 20px 60px 20px;
       text-align: center;
-      position: relative;
+      border-bottom: 1px solid #1e293b;
     }
 
-    header h1 {
+    .hero-showcase-bg h1 {
       font-size: 48px;
       font-weight: 800;
+      margin-top: 0;
       margin-bottom: 15px;
       letter-spacing: -1px;
     }
 
-    header p {
+    .hero-showcase-bg p.subtitle {
       font-size: 20px;
       color: #93c5fd;
       margin-bottom: 35px;
@@ -49,12 +51,29 @@
       font-weight: 600;
       transition: all 0.2s ease-in-out;
       box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      margin-bottom: 50px; /* Pushes the button away from the image */
     }
 
     .btn:hover {
       background: #1d4ed8;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Seamless showcase container directly on the blue background */
+    .showcase-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    .showcase-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
     section {
@@ -80,24 +99,6 @@
       background: #2563eb;
       margin: 10px auto 0 auto;
       border-radius: 2px;
-    }
-
-    /* Showcase Image Styling */
-    .showcase-container {
-      text-align: center;
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      padding: 30px 15px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
-      border: 1px solid #1e293b;
-    }
-
-    .showcase-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto;
     }
 
     .grid {
@@ -216,18 +217,15 @@
 
 <body>
 
-  <header>
+  <div class="hero-showcase-bg">
     <h1>Epic Digital Solutions</h1>
-    <p>Simple Websites. Smart Automations. Real Support.</p>
+    <p class="subtitle">Simple Websites. Smart Automations. Real Support.</p>
     <a href="#contact" class="btn">Request a Free Quote</a>
-  </header>
-
-  <section>
-    <h2>What We Do</h2>
+    
     <div class="showcase-container">
       <img src="services-icons.png" alt="Epic Digital Solutions - What We Do Showcase" class="showcase-img">
     </div>
-  </section>
+  </div>
 
   <section>
     <h2>Starter Packages</h2>
