@@ -103,40 +103,54 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
     }
 
-    /* Premium Dark Mode Cards */
+    /* Redesigned Theme Cards to match the icon graphic above */
     .card {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      border: 1px solid #334155;
-      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 30px 20px;
+      border-radius: 24px; /* Matches the rounded square shape */
+      aspect-ratio: 1 / 1; /* Forces the box to stay a perfect clean square */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border: 2px solid #1e3a8a; /* Darker blue subtle starting border */
+      box-sizing: border-box;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-      border-color: #3b82f6; /* Glows electric blue on hover */
+      transform: translateY(-6px);
+      border-color: #3b82f6; /* Pops to electric neon blue on hover */
+      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.25); /* Subtle neon glow effect */
     }
 
     .card h3 {
       margin-top: 0;
-      color: #60a5fa; /* Vibrant modern blue for titles */
+      margin-bottom: 10px;
+      color: #ffffff;
       font-size: 20px;
       font-weight: 700;
+      letter-spacing: -0.5px;
     }
 
     .card p {
       color: #94a3b8;
-      font-size: 15px;
+      font-size: 14px;
+      margin: 5px 0;
     }
 
-    .card p strong {
-      color: #3b82f6; /* Highlights pricing */
+    /* Styled pricing badges to look built-in and professional */
+    .price-badge {
+      display: inline-block;
+      color: #3b82f6; 
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px !important;
     }
 
     /* Dark Mode About Section */
@@ -176,7 +190,7 @@
       border: 1px solid #475569;
       font-size: 16px;
       font-family: inherit;
-      background: #0f172a; /* Dark inputs */
+      background: #0f172a;
       color: white;
       box-sizing: border-box;
       transition: all 0.2s;
@@ -189,7 +203,6 @@
       box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
     }
 
-    /* Fix dropdown arrow color visibility in dark mode */
     select {
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8'><path d='M1 4l4 4 4-4'/></svg>");
       background-repeat: no-repeat;
@@ -219,7 +232,7 @@
     }
 
     footer {
-      background: #020617; /* Extra dark footer */
+      background: #020617;
       color: #64748b;
       text-align: center;
       padding: 40px 20px;
@@ -251,25 +264,25 @@
     <div class="grid">
       <div class="card">
         <h3>Starter Website</h3>
-        <p><strong>Starting at $199</strong></p>
+        <p class="price-badge">Starting at $199</p>
         <p>Perfect for small businesses that need a clean online presence.</p>
       </div>
 
       <div class="card">
         <h3>Digital Invite + RSVP</h3>
-        <p><strong>Starting at $75</strong></p>
+        <p class="price-badge">Starting at $75</p>
         <p>Great for events that need a custom invite and guest tracking.</p>
       </div>
 
       <div class="card">
         <h3>Business Starter Kit</h3>
-        <p><strong>Starting at $299</strong></p>
+        <p class="price-badge">Starting at $299</p>
         <p>Website, contact form, QR code, basic branding, and setup support.</p>
       </div>
 
       <div class="card">
         <h3>Chatbot Add-On</h3>
-        <p><strong>Starting at $99</strong></p>
+        <p class="price-badge">Starting at $99</p>
         <p>Add a simple chatbot to help answer questions and collect leads.</p>
       </div>
     </div>
