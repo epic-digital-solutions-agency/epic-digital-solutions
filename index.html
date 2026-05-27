@@ -161,9 +161,10 @@
 
     .packages-section .section-inner { position: relative; z-index: 2; }
     
+    /* Optimized Grid Configuration for 6 Items */
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 26px;
     }
 
@@ -173,7 +174,7 @@
       background: rgba(8, 15, 35, 0.84);
       padding: 32px 22px;
       border-radius: 24px;
-      min-height: 245px;
+      aspect-ratio: 1.1 / 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -275,11 +276,15 @@
       top: -1px;
     }
 
+    /* Upgraded High-Visibility Pricing Clarification Note */
     .small-note {
-      margin-top: 28px;
+      margin-top: 36px;
       text-align: center;
-      color: #bfdbfe;
-      font-size: 14px;
+      color: #e2e8f0; /* Brighter, crisper text color */
+      font-size: 16px; /* Increased font size */
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
     .about {
@@ -382,12 +387,12 @@
     @media (max-width: 950px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
       .hero-showcase-bg { padding: 60px 16px 70px; }
       .btn { width: 100%; max-width: 320px; }
       section { padding: 65px 16px; }
       .grid { grid-template-columns: 1fr; }
-      .card { min-height: auto; padding: 30px 22px; }
+      .card { aspect-ratio: auto; min-height: 230px; padding: 30px 22px; }
       form { padding: 28px 20px; }
       .about { padding: 30px 22px; }
     }
@@ -479,6 +484,40 @@
           </div>
         </div>
 
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Home Tech Setup</h3>
+            <p class="price-badge">Starting at $89</p>
+            <p>Professional setup for printers, computing devices, and workspace tools.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>All-in-one printer configuration</li>
+              <li>Wireless printing from phones/PCs</li>
+              <li>Software & driver installations</li>
+              <li>Basic device troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Smart Home & Network</h3>
+            <p class="price-badge">Starting at $149</p>
+            <p>Complete home network optimization and smart ecosystem connection.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Wi-Fi network configurations</li>
+              <li>Smart TV & streaming setup</li>
+              <li>Google Home & Alexa integration</li>
+              <li>IoT device connections</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
       <p class="small-note">Final pricing depends on project size, features, and setup needs.</p>
     </div>
@@ -516,6 +555,7 @@
           <option>Chatbot Setup</option>
           <option>Tech Setup Support</option>
           <option>Business Starter Kit</option>
+          <option>Smart Home & Network Setup</option>
         </select>
 
         <label for="message">Project Details</label>
