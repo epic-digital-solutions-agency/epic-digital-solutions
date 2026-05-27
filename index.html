@@ -12,18 +12,26 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0f172a; /* Deep dark slate background for the whole site */
-      color: #f1f5f9; /* Crisp light text for easy reading */
+      /* Epic High-Tech Glowing Line Pattern Background */
+      background-color: #0b0f19;
+      background-image: 
+        linear-gradient(90deg, rgba(30, 58, 138, 0.15) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(30, 58, 138, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%);
+      background-size: 40px 40px, 40px 40px, auto;
+      background-attachment: fixed;
+      color: #f1f5f9;
       line-height: 1.6;
     }
 
-    /* Combined Hero and Feature section into one massive premium background */
+    /* Seamless main hero background container */
     .hero-showcase-bg {
-      background: linear-gradient(135deg, #020617 0%, #1e3a8a 100%);
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.8) 0%, rgba(30, 58, 138, 0.5) 100%);
       color: white;
       padding: 80px 20px 80px 20px;
       text-align: center;
       border-bottom: 1px solid #1e293b;
+      backdrop-filter: blur(10px); /* Creates a slick glass effect over the grid background */
     }
 
     .hero-showcase-bg h1 {
@@ -57,10 +65,9 @@
     .btn:hover {
       background: #1d4ed8;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
     }
 
-    /* Seamless showcase container directly on the blue background */
     .showcase-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -73,7 +80,7 @@
       border-radius: 16px;
       display: block;
       margin: 0 auto;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
 
     section {
@@ -107,26 +114,27 @@
       gap: 30px;
     }
 
-    /* Redesigned Theme Cards to match the icon graphic above */
+    /* Epic Sci-Fi Theme Cards matching the showcase nodes */
     .card {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
       padding: 30px 20px;
-      border-radius: 24px; /* Matches the rounded square shape */
-      aspect-ratio: 1 / 1; /* Forces the box to stay a perfect clean square */
+      border-radius: 24px;
+      aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      border: 2px solid #1e3a8a; /* Darker blue subtle starting border */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border: 2px solid #1e3a8a;
       box-sizing: border-box;
+      backdrop-filter: blur(5px);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .card:hover {
       transform: translateY(-6px);
-      border-color: #3b82f6; /* Pops to electric neon blue on hover */
-      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.25); /* Subtle neon glow effect */
+      border-color: #3b82f6;
+      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
     }
 
     .card h3 {
@@ -144,7 +152,6 @@
       margin: 5px 0;
     }
 
-    /* Styled pricing badges to look built-in and professional */
     .price-badge {
       display: inline-block;
       color: #3b82f6; 
@@ -153,16 +160,17 @@
       margin-bottom: 12px !important;
     }
 
-    /* Dark Mode About Section */
+    /* Glassmorphism About Section */
     .about {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.7);
       border-radius: 16px;
       padding: 35px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
       border: 1px solid #334155;
       max-width: 800px;
       margin: auto;
       text-align: center;
+      backdrop-filter: blur(5px);
     }
 
     .about p {
@@ -171,15 +179,16 @@
       line-height: 1.8;
     }
 
-    /* Dark Mode Form Styling */
+    /* Glassmorphism Form Styling */
     form {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.85);
       padding: 40px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       border: 1px solid #334155;
       max-width: 600px;
       margin: auto;
+      backdrop-filter: blur(5px);
     }
 
     input, select, textarea {
@@ -228,7 +237,7 @@
 
     button:hover {
       background: #1d4ed8;
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
     }
 
     footer {
@@ -293,39 +302,4 @@
     <div class="about">
       <p>
         Epic Digital Solutions helps small businesses, event hosts, and everyday clients with practical digital tools.
-        With years of hands-on technical service experience, we focus on clear communication, reliable support,
-        and simple solutions that help people move forward without feeling overwhelmed by technology.
-      </p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Request a Free Quote</h2>
-
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="email" placeholder="Email Address" required />
-
-      <select required>
-        <option value="">What do you need help with?</option>
-        <option>Website Creation</option>
-        <option>Digital Invitation</option>
-        <option>Chatbot Setup</option>
-        <option>Tech Setup Support</option>
-        <option>Business Starter Kit</option>
-      </select>
-
-      <textarea rows="5" placeholder="Tell us about your project"></textarea>
-
-      <button type="submit">Send Request</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2026 Epic Digital Solutions. All rights reserved.</p>
-    <p>Powered by the Epic brand.</p>
-  </footer>
-
-</body>
-</html>
+        With years of hands-on technical service experience
