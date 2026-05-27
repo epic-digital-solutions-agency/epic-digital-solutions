@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Digital Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
 
+    header {
+      background: #111827;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f59e0b;
+      color: #111827;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    .about {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background: #111827;
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Epic Digital Solutions</h1>
+    <p>Simple Websites. Smart Automations. Real Support.</p>
+    <a href="#contact" class="btn">Request a Free Quote</a>
+  </header>
+
+  <section>
+    <h2>What We Do</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Website Creation</h3>
+        <p>One-page websites, landing pages, service pages, contact forms, and mobile-friendly business sites.</p>
+      </div>
+
+      <div class="card">
+        <h3>Digital Invitations</h3>
+        <p>Custom invitations for birthdays, weddings, graduations, baby showers, and events with RSVP tracking.</p>
+      </div>
+
+      <div class="card">
+        <h3>Chatbot Setup</h3>
+        <p>Simple chatbot tools that answer questions, collect leads, and help customers request services.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tech Setup Support</h3>
+        <p>Printer setup, email setup, Wi-Fi help, Microsoft 365 setup, and basic computer support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Starter Packages</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Starter Website</h3>
+        <p>Starting at $199</p>
+        <p>Perfect for small businesses that need a clean online presence.</p>
+      </div>
+
+      <div class="card">
+        <h3>Digital Invite + RSVP</h3>
+        <p>Starting at $75</p>
+        <p>Great for events that need a custom invite and guest tracking.</p>
+      </div>
+
+      <div class="card">
+        <h3>Business Starter Kit</h3>
+        <p>Starting at $299</p>
+        <p>Website, contact form, QR code, basic branding, and setup support.</p>
+      </div>
+
+      <div class="card">
+        <h3>Chatbot Add-On</h3>
+        <p>Starting at $99</p>
+        <p>Add a simple chatbot to help answer questions and collect leads.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why Choose Epic Digital Solutions?</h2>
+    <div class="about">
+      <p>
+        Epic Digital Solutions helps small businesses, event hosts, and everyday clients with practical digital tools.
+        With years of hands-on technical service experience, we focus on clear communication, reliable support,
+        and simple solutions that help people move forward without feeling overwhelmed by technology.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Request a Free Quote</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="email" placeholder="Email Address" required />
+
+      <select required>
+        <option value="">What do you need help with?</option>
+        <option>Website Creation</option>
+        <option>Digital Invitation</option>
+        <option>Chatbot Setup</option>
+        <option>Tech Setup Support</option>
+        <option>Business Starter Kit</option>
+      </select>
+
+      <textarea rows="5" placeholder="Tell us about your project"></textarea>
+
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Epic Digital Solutions. All rights reserved.</p>
+    <p>Powered by the Epic brand.</p>
+  </footer>
+
+</body>
+</html>
