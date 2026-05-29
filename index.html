@@ -780,30 +780,11 @@
         msgContainer.scrollTop = msgContainer.scrollHeight;
     }
 
-    function getBotResponse(input) {
-        const query = input.toLowerCase();
-
-        if (query.includes('package') || query.includes('services') || query.includes('pricing')) {
-            return "We offer:\n• Starter Website ($199)\n• Digital Invite + RSVP ($75)\n• Business Starter Kit ($299)\n• Chatbot Add-On ($99)\n• Home Tech & Smart Network setups.\n\nWhich one would you like to know more about?";
-        }
-        if (query.includes('website') || query.includes('starter website')) {
-            return "Our Starter Website ($199) gives you a clean, mobile-responsive single-page layout optimized for search engines (SEO) with built-in social link integrations.";
-        }
-        if (query.includes('invite') || query.includes('rsvp') || query.includes('event')) {
-            return "The Digital Invite + RSVP package ($75) provides a custom thematic design for events, an automated guest list tracking sheet, and real-time email alerts.";
-        }
-        if (query.includes('kit') || query.includes('business starter')) {
-            return "The Business Starter Kit ($299) is our premium package. It features a complete 1-page setup, lead-capture forms, and custom QR codes to drive customer engagement.";
-        }
-        if (query.includes('tech') || query.includes('network') || query.includes('printer') || query.includes('home')) {
-            return "We offer hands-on Home Tech Setup ($89) for printers and devices, and Smart Home & Network setups ($149) to optimize your Wi-Fi and smart ecosystems.";
-        }
-        if (query.includes('contact') || query.includes('quote') || query.includes('hire') || query.includes('form')) {
-            return "Ready to start? Fill out the 'Request a Free Quote' form right on this page, and we'll get back to you within 24 hours!";
-        }
-
-        return "Thanks for reaching out! I'm the EDS Automated Assistant. Try asking about 'packages', 'website', 'business kit', or 'quote'!";
+   function getBotResponse(input) {
+    const query = input.toLowerCase();
+    if (query.includes('package') || query.includes('services') || query.includes('pricing')) {
+        // ... all the old "if" checks ...
     }
-  </script>
-</body>
+    return "Thanks for reaching out! ...";
+}
 </html>
