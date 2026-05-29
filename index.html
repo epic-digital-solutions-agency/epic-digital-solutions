@@ -405,7 +405,7 @@
         position: fixed;
         bottom: 25px;
         right: 25px;
-        z-index: 999999 !important; /* Forces layout rendering above template layers */
+        z-index: 999999 !important;
         font-family: 'Inter', Arial, sans-serif;
     }
     #eds-cb-button {
@@ -481,7 +481,6 @@
     .eds-cb-bot { background-color: #1e293b !important; color: #e2e8f0 !important; align-self: flex-start !important; border-top-left-radius: 0 !important; }
     .eds-cb-user { background-color: #06b6d4 !important; color: white !important; align-self: flex-end !important; border-top-right-radius: 0 !important; }
 
-    /* Fixes global form elements from crushing chat input area */
     #eds-cb-input-area { 
         padding: 10px 12px !important; 
         border-top: 1px solid #1e293b !important; 
@@ -514,7 +513,6 @@
         color: #94a3b8 !important; 
     }
     
-    /* Low Profile Icon Arrow Send Button Block */
     #eds-cb-send-btn { 
         background: linear-gradient(135deg, #2563eb, #06b6d4) !important; 
         color: white !important; 
@@ -747,7 +745,6 @@
     }
     form.addEventListener("submit", handleSubmit);
 
-    /* Chatbot Execution Logic Engine */
     function toggleChat() {
         const chatBox = document.getElementById('eds-cb-box');
         chatBox.classList.toggle('eds-cb-hidden');
@@ -780,11 +777,47 @@
         msgContainer.scrollTop = msgContainer.scrollHeight;
     }
 
-   function getBotResponse(input) {
-    const query = input.toLowerCase();
-    if (query.includes('package') || query.includes('services') || query.includes('pricing')) {
-        // ... all the old "if" checks ...
+    function getBotResponse(input) {
+        const query = input.toLowerCase();
+
+        // Theme 1: Packages, Options, Pricing, Fees, Cost
+        if (query.includes('package') || query.includes('service') || query.includes('price') || query.includes('pricing') || query.includes('cost') || query.includes('how much')) {
+            return "We offer high-value local tech solutions:\n• Starter Website ($199)\n• Digital Invite + RSVP ($75)\n• Business Starter Kit ($299)\n• Chatbot Add-On ($99)\n• Home Tech & Network Optimization.\n\nWhich one fits what you're looking for?";
+        }
+        
+        // Theme 2: Custom Work, Tailored Designs, Free-Form Requests
+        if (query.includes('custom') || query.includes('own design') || query.includes('make it mine') || query.includes('different layout') || query.includes('tailor')) {
+            return "Absolutely! Every project we build can be completely customized to match your exact business branding, layout ideas, color preferences, and personal style. We build assets tailored directly to your vision!";
+        }
+
+        // Theme 3: Websites, Pages, Landing Page
+        if (query.includes('web') || query.includes('site') || query.includes('page') || query.includes('portfolio')) {
+            return "Our Starter Website ($199) delivers a high-converting, mobile-responsive layout built to turn local visitors into leads. It includes optimization fundamentals and complete social link integrations.";
+        }
+
+        // Theme 4: Events, Invitations, RSVPs, Parties
+        if (query.includes('invite') || query.includes('rsvp') || query.includes('event') || query.includes('wedding') || query.includes('party')) {
+            return "Our Digital Invite + RSVP asset ($75) gives your event a beautiful dedicated landing theme. It includes a live guest tracker, automatic RSVP updates, and real-time email alerts.";
+        }
+
+        // Theme 5: Premium Business Kits
+        if (query.includes('kit') || query.includes('business starter') || query.includes('premium') || query.includes('qr')) {
+            return "The Business Starter Kit ($299) is our most popular option. It covers a full 1-page business build, high-visibility customer quote forms, and personalized scannable QR codes for your marketing.";
+        }
+
+        // Theme 6: Technical Support, Wi-Fi, Networks, Printers
+        if (query.includes('tech') || query.includes('network') || query.includes('printer') || query.includes('wifi') || query.includes('wi-fi') || query.includes('router') || query.includes('device')) {
+            return "We specialize in hands-on local technical configurations. We fix printer driver issues ($89) and optimize whole-home smart networks or streaming setups ($149) to keep your connectivity fast and stable.";
+        }
+
+        // Theme 7: Moving Forward, Free Quotes, Consultation
+        if (query.includes('contact') || query.includes('quote') || query.includes('hire') || query.includes('start') || query.includes('call') || query.includes('form')) {
+            return "Let's bring your project to life! Scroll down right on this page to our 'Request a Free Quote' form, type in your goals, and we'll review it and reach back out to you within 24 hours!";
+        }
+
+        // Conversational Fallback
+        return "I want to make sure I give you the right info! I can break down our digital website choices, invitation trackers, tech support packages, or custom design options. What are you building today?";
     }
-    return "Thanks for reaching out! ...";
-}
+  </script>
+</body>
 </html>
