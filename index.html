@@ -675,10 +675,17 @@
     border: 1px solid #334155; 
     background-color: #0f172a; 
     color: #ffffff !important; /* Forces typed text to be bright white */
-    caret-color: #06b6d4 !important; /* Forces the blinking cursor to be bright neon cyan! */
+    caret-color: #06b6d4 !important; /* Forces the blinking cursor line to be neon cyan */
     border-radius: 20px; 
     outline: none;
     font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+/* Light up the border when you click inside to type */
+#eds-user-input:focus {
+    border-color: #06b6d4 !important;
+    box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
 }
 #eds-user-input::placeholder { 
     color: #94a3b8 !important; /* Makes placeholder text clearly visible */
