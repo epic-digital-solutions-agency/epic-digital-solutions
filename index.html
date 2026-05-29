@@ -19,7 +19,7 @@
       background: #020617;
     }
 
-    /* Main Background - FIXED: Added pointer-events: none to prevent click blocking */
+    /* Main Background - Passes through clicks to the widget */
     body::before {
       content: "";
       position: fixed;
@@ -29,7 +29,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      pointer-events: none; 
+      pointer-events: none;
     }
 
     body::after {
@@ -399,16 +399,16 @@
     }
 
     /* ==========================================================================
-       Epic Digital Solutions Custom Chatbot CSS Stylesheet
+       Epic Digital Solutions Isolated Custom Chatbot CSS Sheet
        ========================================================================== */
-    #eds-chat-container {
+    #eds-cb-container {
         position: fixed;
         bottom: 25px;
         right: 25px;
-        z-index: 10000; /* Raised z-index to stay on top of all components */
-        font-family: Arial, sans-serif;
+        z-index: 999999 !important; /* Forces layout rendering above template layers */
+        font-family: 'Inter', Arial, sans-serif;
     }
-    #eds-chat-button {
+    #eds-cb-button {
         width: 60px;
         height: 60px;
         background-color: #06b6d4; 
@@ -420,17 +420,17 @@
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         transition: transform 0.2s ease;
     }
-    #eds-chat-button:hover { transform: scale(1.1); }
-    #chat-icon { color: white; font-size: 28px; }
+    #eds-cb-button:hover { transform: scale(1.1); }
+    #eds-cb-icon { color: white; font-size: 28px; }
 
-    #eds-chat-box {
+    #eds-cb-box {
         width: 330px;
         height: 450px;
         background-color: #0f172a; 
         border-radius: 12px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
         overflow: hidden;
         position: absolute;
         bottom: 75px;
@@ -438,76 +438,100 @@
         transition: all 0.3s ease;
         border: 1px solid #1e293b;
     }
-    .chat-hidden {
+    .eds-cb-hidden {
         display: none !important;
         opacity: 0;
         transform: translateY(20px);
     }
-    #eds-chat-header {
+    #eds-cb-header {
         background-color: #1e293b;
         color: white;
         padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         border-bottom: 1px solid #334155;
     }
-    #eds-chat-header h4 { margin: 0; font-size: 16px; color: #67e8f9; }
-    #eds-chat-header button { background: none; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; }
-    #eds-chat-header button:hover { color: white; }
-
-    #eds-chat-messages {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-        background-color: #0f172a;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    #eds-cb-header h4 { margin: 0 !important; font-size: 16px !important; color: #67e8f9 !important; }
+    
+    #eds-cb-close-btn { 
+        background: none !important; 
+        border: none !important; 
+        color: #94a3b8 !important; 
+        font-size: 13px !important; 
+        cursor: pointer !important;
+        font-weight: 600 !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
     }
-    .message { padding: 10px 14px; border-radius: 15px; font-size: 14px; max-width: 80%; line-height: 1.4; }
-    .bot-message { background-color: #1e293b; color: #e2e8f0; align-self: flex-start; border-top-left-radius: 0; }
-    .user-message { background-color: #06b6d4; color: white; align-self: flex-end; border-top-right-radius: 0; }
+    #eds-cb-close-btn:hover { color: white !important; }
 
-    #eds-chat-input-area { 
-        padding: 12px; 
-        border-top: 1px solid #1e293b; 
-        display: flex; 
-        background: #1e293b;
-        gap: 8px; 
+    #eds-cb-messages {
+        flex: 1 !important;
+        padding: 15px !important;
+        overflow-y: auto !important;
+        background-color: #0f172a !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
     }
-    #eds-user-input { 
-        flex: 1; 
-        padding: 10px 15px; 
-        border: 1px solid #334155; 
-        background-color: #0f172a; 
+    .eds-cb-msg { padding: 10px 14px !important; border-radius: 15px !important; font-size: 14px !important; max-width: 80% !important; line-height: 1.4 !important; }
+    .eds-cb-bot { background-color: #1e293b !important; color: #e2e8f0 !important; align-self: flex-start !important; border-top-left-radius: 0 !important; }
+    .eds-cb-user { background-color: #06b6d4 !important; color: white !important; align-self: flex-end !important; border-top-right-radius: 0 !important; }
+
+    /* Fixes global form elements from crushing chat input area */
+    #eds-cb-input-area { 
+        padding: 10px 12px !important; 
+        border-top: 1px solid #1e293b !important; 
+        display: flex !important; 
+        background: #1e293b !important;
+        gap: 8px !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+    #eds-cb-user-input { 
+        flex: 1 !important; 
+        width: 75% !important;
+        padding: 8px 14px !important; 
+        margin-bottom: 0 !important; 
+        border: 1px solid #334155 !important; 
+        background-color: #0f172a !important; 
         color: #ffffff !important; 
         caret-color: #06b6d4 !important; 
-        border-radius: 20px; 
-        outline: none;
-        font-size: 14px;
-        transition: border-color 0.2s ease;
+        border-radius: 20px !important; 
+        outline: none !important;
+        font-size: 14px !important;
+        height: 36px !important;
+        box-sizing: border-box !important;
     }
-    #eds-user-input:focus {
+    #eds-cb-user-input:focus {
         border-color: #06b6d4 !important;
-        box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
+        box-shadow: 0 0 5px rgba(6, 182, 212, 0.5) !important;
     }
-    #eds-user-input::placeholder { 
+    #eds-cb-user-input::placeholder { 
         color: #94a3b8 !important; 
     }
-    #eds-chat-input-area button { 
-        background-color: #06b6d4; 
-        color: white; 
-        border: none; 
-        padding: 0 16px; 
-        border-radius: 20px; 
-        cursor: pointer; 
-        font-weight: bold;
-        font-size: 14px;
-        white-space: nowrap; 
+    
+    /* Low Profile Icon Arrow Send Button Block */
+    #eds-cb-send-btn { 
+        background: linear-gradient(135deg, #2563eb, #06b6d4) !important; 
+        color: white !important; 
+        border: none !important; 
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50% !important; 
+        cursor: pointer !important; 
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: none !important;
     }
-    #eds-chat-input-area button:hover { 
-        background-color: #0891b2; 
+    #eds-cb-send-btn:hover { 
+        transform: scale(1.05); 
     }
   </style>
 </head>
@@ -684,22 +708,22 @@
     <p>Powered by the Epic brand.</p>
   </footer>
 
-  <div id="eds-chat-container">
-      <div id="eds-chat-button" onclick="toggleChat()">
-          <span id="chat-icon">💬</span>
+  <div id="eds-cb-container">
+      <div id="eds-cb-button" onclick="toggleChat()">
+          <span id="eds-cb-icon">💬</span>
       </div>
       
-      <div id="eds-chat-box" class="chat-hidden">
-          <div id="eds-chat-header">
+      <div id="eds-cb-box" class="eds-cb-hidden">
+          <div id="eds-cb-header">
               <h4>EDS Digital Assistant</h4>
-              <button onclick="toggleChat()">×</button>
+              <button id="eds-cb-close-btn" onclick="toggleChat()">End Chat ×</button>
           </div>
-          <div id="eds-chat-messages">
-              <div class="message bot-message">Hello! Welcome to Epic Digital Solutions. How can I help you build your digital presence today? Type "packages" to see what we offer!</div>
+          <div id="eds-cb-messages">
+              <div class="eds-cb-msg eds-cb-bot">Hello! Welcome to Epic Digital Solutions. How can I help you build your digital presence today? Type "packages" to see what we offer!</div>
           </div>
-          <div id="eds-chat-input-area">
-              <input type="text" id="eds-user-input" placeholder="Ask about packages..." onkeypress="handleKeyPress(event)" autocomplete="off">
-              <button onclick="sendMessage()">Send</button>
+          <div id="eds-cb-input-area">
+              <input type="text" id="eds-cb-user-input" placeholder="Ask about packages..." onkeypress="handleKeyPress(event)" autocomplete="off">
+              <button id="eds-cb-send-btn" onclick="sendMessage()">➔</button>
           </div>
       </div>
   </div>
@@ -723,10 +747,10 @@
     }
     form.addEventListener("submit", handleSubmit);
 
-    /* Chatbot Controller Scripts */
+    /* Chatbot Execution Logic Engine */
     function toggleChat() {
-        const chatBox = document.getElementById('eds-chat-box');
-        chatBox.classList.toggle('chat-hidden');
+        const chatBox = document.getElementById('eds-cb-box');
+        chatBox.classList.toggle('eds-cb-hidden');
     }
 
     function handleKeyPress(event) {
@@ -734,23 +758,23 @@
     }
 
     function sendMessage() {
-        const inputEl = document.getElementById('eds-user-input');
+        const inputEl = document.getElementById('eds-cb-user-input');
         const messageText = inputEl.value.trim();
         if (messageText === '') return;
 
-        appendMessage(messageText, 'user-message');
+        appendMessage(messageText, 'eds-cb-user');
         inputEl.value = '';
 
         setTimeout(() => {
             const botResponse = getBotResponse(messageText);
-            appendMessage(botResponse, 'bot-message');
+            appendMessage(botResponse, 'eds-cb-bot');
         }, 400);
     }
 
     function appendMessage(text, className) {
-        const msgContainer = document.getElementById('eds-chat-messages');
+        const msgContainer = document.getElementById('eds-cb-messages');
         const msgDiv = document.createElement('div');
-        msgDiv.className = `message ${className}`;
+        msgDiv.className = `eds-cb-msg ${className}`;
         msgDiv.innerText = text;
         msgContainer.appendChild(msgDiv);
         msgContainer.scrollTop = msgContainer.scrollHeight;
