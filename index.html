@@ -19,7 +19,7 @@
       background: #020617;
     }
 
-    /* Main Background */
+    /* Main Background - FIXED: Added pointer-events: none to prevent click blocking */
     body::before {
       content: "";
       position: fixed;
@@ -29,6 +29,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      pointer-events: none; 
     }
 
     body::after {
@@ -396,6 +397,118 @@
       form { padding: 28px 20px; }
       .about { padding: 30px 22px; }
     }
+
+    /* ==========================================================================
+       Epic Digital Solutions Custom Chatbot CSS Stylesheet
+       ========================================================================== */
+    #eds-chat-container {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 10000; /* Raised z-index to stay on top of all components */
+        font-family: Arial, sans-serif;
+    }
+    #eds-chat-button {
+        width: 60px;
+        height: 60px;
+        background-color: #06b6d4; 
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease;
+    }
+    #eds-chat-button:hover { transform: scale(1.1); }
+    #chat-icon { color: white; font-size: 28px; }
+
+    #eds-chat-box {
+        width: 330px;
+        height: 450px;
+        background-color: #0f172a; 
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: absolute;
+        bottom: 75px;
+        right: 0;
+        transition: all 0.3s ease;
+        border: 1px solid #1e293b;
+    }
+    .chat-hidden {
+        display: none !important;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    #eds-chat-header {
+        background-color: #1e293b;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #334155;
+    }
+    #eds-chat-header h4 { margin: 0; font-size: 16px; color: #67e8f9; }
+    #eds-chat-header button { background: none; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; }
+    #eds-chat-header button:hover { color: white; }
+
+    #eds-chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background-color: #0f172a;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .message { padding: 10px 14px; border-radius: 15px; font-size: 14px; max-width: 80%; line-height: 1.4; }
+    .bot-message { background-color: #1e293b; color: #e2e8f0; align-self: flex-start; border-top-left-radius: 0; }
+    .user-message { background-color: #06b6d4; color: white; align-self: flex-end; border-top-right-radius: 0; }
+
+    #eds-chat-input-area { 
+        padding: 12px; 
+        border-top: 1px solid #1e293b; 
+        display: flex; 
+        background: #1e293b;
+        gap: 8px; 
+    }
+    #eds-user-input { 
+        flex: 1; 
+        padding: 10px 15px; 
+        border: 1px solid #334155; 
+        background-color: #0f172a; 
+        color: #ffffff !important; 
+        caret-color: #06b6d4 !important; 
+        border-radius: 20px; 
+        outline: none;
+        font-size: 14px;
+        transition: border-color 0.2s ease;
+    }
+    #eds-user-input:focus {
+        border-color: #06b6d4 !important;
+        box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
+    }
+    #eds-user-input::placeholder { 
+        color: #94a3b8 !important; 
+    }
+    #eds-chat-input-area button { 
+        background-color: #06b6d4; 
+        color: white; 
+        border: none; 
+        padding: 0 16px; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        font-weight: bold;
+        font-size: 14px;
+        white-space: nowrap; 
+    }
+    #eds-chat-input-area button:hover { 
+        background-color: #0891b2; 
+    }
   </style>
 </head>
 <body>
@@ -570,219 +683,103 @@
     <p>© 2026 Epic Digital Solutions. All rights reserved.</p>
     <p>Powered by the Epic brand.</p>
   </footer>
-  <script>
-  var form = document.getElementById("my-form");
-  async function handleSubmit(event) {
-    event.preventDefault();
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {'Accept': 'application/json'}
-    }).then(response => {
-      if (response.ok) {
-        form.innerHTML = "<h2 style='color:#67e8f9; text-align:center;'>Request Received!</h2><p style='text-align:center;'>Thanks for reaching out to Epic Digital Solutions. I’ll review your request and follow up with you shortly.</p>"; 
-      } else {
-        form.innerHTML = "<p style='text-align:center;'>Oops! There was a problem submitting your form. Please try again.</p>";
-      }
-    });
-  }
-  form.addEventListener("submit", handleSubmit);
-</script>
-<style>
-/* Chatbot Floating Button */
-#eds-chat-container {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-    font-family: Arial, sans-serif;
-}
-#eds-chat-button {
-    width: 60px;
-    height: 60px;
-    background-color: #06b6d4; /* Sleek Cyan to match your form theme */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.2s ease;
-}
-#eds-chat-button:hover { transform: scale(1.1); }
-#chat-icon { color: white; font-size: 28px; }
 
-/* Chat Window Box */
-#eds-chat-box {
-    width: 330px;
-    height: 450px;
-    background-color: #0f172a; /* Dark sleek slate matching modern UI */
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: absolute;
-    bottom: 75px;
-    right: 0;
-    transition: all 0.3s ease;
-    border: 1px solid #1e293b;
-}
-.chat-hidden {
-    display: none !important;
-    opacity: 0;
-    transform: translateY(20px);
-}
-#eds-chat-header {
-    background-color: #1e293b;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #334155;
-}
-#eds-chat-header h4 { margin: 0; font-size: 16px; color: #67e8f9; }
-#eds-chat-header button { background: none; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; }
-#eds-chat-header button:hover { color: white; }
-
-/* Messages Area */
-#eds-chat-messages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    background-color: #0f172a;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.message { padding: 10px 14px; border-radius: 15px; font-size: 14px; max-width: 80%; line-height: 1.4; }
-.bot-message { background-color: #1e293b; color: #e2e8f0; align-self: flex-start; border-top-left-radius: 0; }
-.user-message { background-color: #06b6d4; color: white; align-self: flex-end; border-top-right-radius: 0; }
-
-/* Updated Input Field Area */
-#eds-chat-input-area { 
-    padding: 12px; 
-    border-top: 1px solid #1e293b; 
-    display: flex; 
-    background: #1e293b;
-    gap: 8px; /* Adds clean spacing between input and button */
-}
-#eds-user-input { 
-    flex: 1; 
-    padding: 10px 15px; 
-    border: 1px solid #334155; 
-    background-color: #0f172a; 
-    color: #ffffff !important; /* Forces typed text to be bright white */
-    caret-color: #06b6d4 !important; /* Forces the blinking cursor line to be neon cyan */
-    border-radius: 20px; 
-    outline: none;
-    font-size: 14px;
-    transition: border-color 0.2s ease;
-}
-
-/* Light up the border when you click inside to type */
-#eds-user-input:focus {
-    border-color: #06b6d4 !important;
-    box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
-}
-#eds-user-input::placeholder { 
-    color: #94a3b8 !important; /* Makes placeholder text clearly visible */
-}
-#eds-chat-input-area button { 
-    background-color: #06b6d4; 
-    color: white; 
-    border: none; 
-    padding: 0 16px; 
-    border-radius: 20px; 
-    cursor: pointer; 
-    font-weight: bold;
-    font-size: 14px;
-    white-space: nowrap; /* Prevents text wrapping */
-}
-#eds-chat-input-area button:hover { 
-    background-color: #0891b2; 
-}
-</style>
-
-<div id="eds-chat-container">
-    <div id="eds-chat-button" onclick="toggleChat()">
-        <span id="chat-icon">💬</span>
-    </div>
-    
-    <div id="eds-chat-box" class="chat-hidden">
-        <div id="eds-chat-header">
-            <h4>EDS Digital Assistant</h4>
-            <button onclick="toggleChat()">×</button>
-        </div>
-        <div id="eds-chat-messages">
-            <div class="message bot-message">Hello! Welcome to Epic Digital Solutions. How can I help you build your digital presence today? Type "packages" to see what we offer!</div>
-        </div>
-  <div id="eds-chat-input-area">
-    <input type="text" id="eds-user-input" placeholder="Ask about packages..." onkeypress="handleKeyPress(event)" autocomplete="off">
-    <button onclick="sendMessage()">Send</button>
+  <div id="eds-chat-container">
+      <div id="eds-chat-button" onclick="toggleChat()">
+          <span id="chat-icon">💬</span>
+      </div>
+      
+      <div id="eds-chat-box" class="chat-hidden">
+          <div id="eds-chat-header">
+              <h4>EDS Digital Assistant</h4>
+              <button onclick="toggleChat()">×</button>
+          </div>
+          <div id="eds-chat-messages">
+              <div class="message bot-message">Hello! Welcome to Epic Digital Solutions. How can I help you build your digital presence today? Type "packages" to see what we offer!</div>
+          </div>
+          <div id="eds-chat-input-area">
+              <input type="text" id="eds-user-input" placeholder="Ask about packages..." onkeypress="handleKeyPress(event)" autocomplete="off">
+              <button onclick="sendMessage()">Send</button>
+          </div>
+      </div>
   </div>
-    </div>
-</div>
 
-<script>
-function toggleChat() {
-    const chatBox = document.getElementById('eds-chat-box');
-    chatBox.classList.toggle('chat-hidden');
-}
-
-function handleKeyPress(event) {
-    if (event.key === 'Enter') { sendMessage(); }
-}
-
-function sendMessage() {
-    const inputEl = document.getElementById('eds-user-input');
-    const messageText = inputEl.value.trim();
-    if (messageText === '') return;
-
-    appendMessage(messageText, 'user-message');
-    inputEl.value = '';
-
-    setTimeout(() => {
-        const botResponse = getBotResponse(messageText);
-        appendMessage(botResponse, 'bot-message');
-    }, 400);
-}
-
-function appendMessage(text, className) {
-    const msgContainer = document.getElementById('eds-chat-messages');
-    const msgDiv = document.createElement('div');
-    msgDiv.className = `message ${className}`;
-    msgDiv.innerText = text;
-    msgContainer.appendChild(msgDiv);
-    msgContainer.scrollTop = msgContainer.scrollHeight;
-}
-
-function getBotResponse(input) {
-    const query = input.toLowerCase();
-
-    if (query.includes('package') || query.includes('services') || query.includes('pricing')) {
-        return "We offer:\n• Starter Website ($199)\n• Digital Invite + RSVP ($75)\n• Business Starter Kit ($299)\n• Chatbot Add-On ($99)\n• Home Tech & Smart Network setups.\n\nWhich one would you like to know more about?";
+  <script>
+    var form = document.getElementById("my-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {'Accept': 'application/json'}
+      }).then(response => {
+        if (response.ok) {
+          form.innerHTML = "<h2 style='color:#67e8f9; text-align:center;'>Request Received!</h2><p style='text-align:center;'>Thanks for reaching out to Epic Digital Solutions. I’ll review your request and follow up with you shortly.</p>"; 
+        } else {
+          form.innerHTML = "<p style='text-align:center;'>Oops! There was a problem submitting your form. Please try again.</p>";
+        }
+      });
     }
-    if (query.includes('website') || query.includes('starter website')) {
-        return "Our Starter Website ($199) gives you a clean, mobile-responsive single-page layout optimized for search engines (SEO) with built-in social link integrations.";
-    }
-    if (query.includes('invite') || query.includes('rsvp') || query.includes('event')) {
-        return "The Digital Invite + RSVP package ($75) provides a custom thematic design for events, an automated guest list tracking sheet, and real-time email alerts.";
-    }
-    if (query.includes('kit') || query.includes('business starter')) {
-        return "The Business Starter Kit ($299) is our premium package. It features a complete 1-page setup, lead-capture forms, and custom QR codes to drive customer engagement.";
-    }
-    if (query.includes('tech') || query.includes('network') || query.includes('printer') || query.includes('home')) {
-        return "We offer hands-on Home Tech Setup ($89) for printers and devices, and Smart Home & Network setups ($149) to optimize your Wi-Fi and smart ecosystems.";
-    }
-    if (query.includes('contact') || query.includes('quote') || query.includes('hire') || query.includes('form')) {
-        return "Ready to start? Fill out the 'Request a Free Quote' form right on this page, and we'll get back to you within 24 hours!";
+    form.addEventListener("submit", handleSubmit);
+
+    /* Chatbot Controller Scripts */
+    function toggleChat() {
+        const chatBox = document.getElementById('eds-chat-box');
+        chatBox.classList.toggle('chat-hidden');
     }
 
-    return "Thanks for reaching out! I'm the EDS Automated Assistant. Try asking about 'packages', 'website', 'business kit', or 'quote'!";
-}
-</script>
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') { sendMessage(); }
+    }
+
+    function sendMessage() {
+        const inputEl = document.getElementById('eds-user-input');
+        const messageText = inputEl.value.trim();
+        if (messageText === '') return;
+
+        appendMessage(messageText, 'user-message');
+        inputEl.value = '';
+
+        setTimeout(() => {
+            const botResponse = getBotResponse(messageText);
+            appendMessage(botResponse, 'bot-message');
+        }, 400);
+    }
+
+    function appendMessage(text, className) {
+        const msgContainer = document.getElementById('eds-chat-messages');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${className}`;
+        msgDiv.innerText = text;
+        msgContainer.appendChild(msgDiv);
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+        const query = input.toLowerCase();
+
+        if (query.includes('package') || query.includes('services') || query.includes('pricing')) {
+            return "We offer:\n• Starter Website ($199)\n• Digital Invite + RSVP ($75)\n• Business Starter Kit ($299)\n• Chatbot Add-On ($99)\n• Home Tech & Smart Network setups.\n\nWhich one would you like to know more about?";
+        }
+        if (query.includes('website') || query.includes('starter website')) {
+            return "Our Starter Website ($199) gives you a clean, mobile-responsive single-page layout optimized for search engines (SEO) with built-in social link integrations.";
+        }
+        if (query.includes('invite') || query.includes('rsvp') || query.includes('event')) {
+            return "The Digital Invite + RSVP package ($75) provides a custom thematic design for events, an automated guest list tracking sheet, and real-time email alerts.";
+        }
+        if (query.includes('kit') || query.includes('business starter')) {
+            return "The Business Starter Kit ($299) is our premium package. It features a complete 1-page setup, lead-capture forms, and custom QR codes to drive customer engagement.";
+        }
+        if (query.includes('tech') || query.includes('network') || query.includes('printer') || query.includes('home')) {
+            return "We offer hands-on Home Tech Setup ($89) for printers and devices, and Smart Home & Network setups ($149) to optimize your Wi-Fi and smart ecosystems.";
+        }
+        if (query.includes('contact') || query.includes('quote') || query.includes('hire') || query.includes('form')) {
+            return "Ready to start? Fill out the 'Request a Free Quote' form right on this page, and we'll get back to you within 24 hours!";
+        }
+
+        return "Thanks for reaching out! I'm the EDS Automated Assistant. Try asking about 'packages', 'website', 'business kit', or 'quote'!";
+    }
+  </script>
 </body>
 </html>
