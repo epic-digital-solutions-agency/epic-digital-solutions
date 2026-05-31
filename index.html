@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Epic Digital Solutions</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
-    
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -19,13 +23,14 @@
       background: #020617;
     }
 
-    /* Main Background - Passes through clicks to the widget */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       z-index: -2;
-      background: linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.9)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2070&auto=format&fit=crop');
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.9)),
+        url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2070&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -37,11 +42,14 @@
       position: fixed;
       inset: 0;
       z-index: -1;
-      background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.25), transparent 30%), radial-gradient(circle at 80% 40%, rgba(168, 85, 247, 0.22), transparent 30%), radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.16), transparent 35%);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 40%, rgba(168, 85, 247, 0.22), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.16), transparent 35%);
       pointer-events: none;
     }
 
-    /* Hero */
+    /* HERO */
     .hero-showcase-bg {
       position: relative;
       color: white;
@@ -56,7 +64,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.18), transparent 28%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.18), transparent 30%);
+      background:
+        radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.18), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.18), transparent 30%);
       pointer-events: none;
     }
 
@@ -92,13 +102,17 @@
       border-radius: 999px;
       font-weight: 700;
       transition: all 0.25s ease;
-      box-shadow: 0 0 16px rgba(37, 99, 235, 0.45), 0 8px 24px rgba(0, 0, 0, 0.35);
+      box-shadow:
+        0 0 16px rgba(37, 99, 235, 0.45),
+        0 8px 24px rgba(0, 0, 0, 0.35);
       margin-bottom: 55px;
     }
 
     .btn:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 0 22px rgba(56, 189, 248, 0.7), 0 12px 30px rgba(0, 0, 0, 0.45);
+      box-shadow:
+        0 0 22px rgba(56, 189, 248, 0.7),
+        0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
     .showcase-container {
@@ -114,12 +128,18 @@
       display: block;
       margin: 0 auto;
       border: 1px solid rgba(96, 165, 250, 0.35);
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.25), 0 24px 55px rgba(0, 0, 0, 0.7);
+      box-shadow:
+        0 0 24px rgba(56, 189, 248, 0.25),
+        0 24px 55px rgba(0, 0, 0, 0.7);
     }
 
-    /* General Section */
+    /* GENERAL SECTION */
     section { padding: 85px 20px; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
     h2 {
       text-align: center;
@@ -142,34 +162,14 @@
       box-shadow: 0 0 14px rgba(34, 211, 238, 0.65);
     }
 
-    /* Starter Packages Background */
-    .packages-section {
-      position: relative;
-      max-width: 100%;
-      margin: 0;
-      overflow: hidden;
-      border-top: 1px solid rgba(59, 130, 246, 0.2);
-      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    .packages-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 42%, rgba(0, 183, 255, 0.15), transparent 32%), radial-gradient(circle at 80% 35%, rgba(168, 85, 247, 0.15), transparent 30%);
-      pointer-events: none;
-    }
-
-    .packages-section .section-inner { position: relative; z-index: 2; }
-    
-    /* Optimized Grid Configuration for 6 Items */
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 26px;
     }
 
-    /* Card Setup with Hidden Details Layer */
+    /* SHARED CARD SETUP */
     .card {
       position: relative;
       background: rgba(8, 15, 35, 0.84);
@@ -182,7 +182,10 @@
       text-align: center;
       backdrop-filter: blur(12px);
       border: 2px solid rgba(56, 189, 248, 0.62);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.45), 0 0 28px rgba(37, 99, 235, 0.25), inset 0 0 12px rgba(59, 130, 246, 0.16);
+      box-shadow:
+        0 0 12px rgba(56, 189, 248, 0.45),
+        0 0 28px rgba(37, 99, 235, 0.25),
+        inset 0 0 12px rgba(59, 130, 246, 0.16);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
@@ -190,11 +193,15 @@
     .card:hover {
       transform: translateY(-7px) scale(1.02);
       border-color: #67e8f9;
-      box-shadow: 0 0 18px rgba(56, 189, 248, 0.72), 0 0 42px rgba(37, 99, 235, 0.4);
+      box-shadow:
+        0 0 18px rgba(56, 189, 248, 0.72),
+        0 0 42px rgba(37, 99, 235, 0.4);
     }
 
     .card-main-content {
       transition: transform 0.3s ease;
+      position: relative;
+      z-index: 2;
     }
 
     .card:hover .card-main-content {
@@ -224,7 +231,6 @@
       text-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
     }
 
-    /* Slide-Up Tech Detail Panel Styling */
     .card-hover-details {
       position: absolute;
       inset: 0;
@@ -277,7 +283,84 @@
       top: -1px;
     }
 
-    /* Upgraded High-Visibility Pricing Clarification Note */
+    /* WHAT WE DO SECTION */
+    .what-we-do-section {
+      position: relative;
+      max-width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(59, 130, 246, 0.2);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.68), rgba(15, 23, 42, 0.72));
+    }
+
+    .what-we-do-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 35%, rgba(0, 183, 255, 0.15), transparent 32%),
+        radial-gradient(circle at 80% 45%, rgba(168, 85, 247, 0.15), transparent 30%);
+      pointer-events: none;
+    }
+
+    .what-we-do-section .section-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .what-card {
+      min-height: 255px;
+      aspect-ratio: 1.15 / 1;
+      padding: 22px 18px 24px;
+    }
+
+    .what-card-img {
+      width: 100%;
+      max-width: 230px;
+      height: 130px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 14px;
+      filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.35));
+    }
+
+    .what-card h3 {
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    .what-card p {
+      max-width: 260px;
+      margin: 0 auto;
+      line-height: 1.35;
+    }
+
+    /* STARTER PACKAGES */
+    .packages-section {
+      position: relative;
+      max-width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(59, 130, 246, 0.2);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .packages-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 42%, rgba(0, 183, 255, 0.15), transparent 32%),
+        radial-gradient(circle at 80% 35%, rgba(168, 85, 247, 0.15), transparent 30%);
+      pointer-events: none;
+    }
+
+    .packages-section .section-inner {
+      position: relative;
+      z-index: 2;
+    }
+
     .small-note {
       margin-top: 36px;
       text-align: center;
@@ -288,11 +371,14 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
+    /* ABOUT */
     .about {
       background: rgba(15, 23, 42, 0.76);
       border-radius: 22px;
       padding: 40px;
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.14), 0 12px 35px rgba(0, 0, 0, 0.45);
+      box-shadow:
+        0 0 24px rgba(56, 189, 248, 0.14),
+        0 12px 35px rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(59, 130, 246, 0.35);
       max-width: 850px;
       margin: auto;
@@ -306,12 +392,15 @@
       line-height: 1.85;
       margin: 0;
     }
-    
+
+    /* FORM */
     form {
       background: rgba(15, 23, 42, 0.86);
       padding: 42px;
       border-radius: 22px;
-      box-shadow: 0 0 24px rgba(37, 99, 235, 0.18), 0 12px 35px rgba(0, 0, 0, 0.55);
+      box-shadow:
+        0 0 24px rgba(37, 99, 235, 0.18),
+        0 12px 35px rgba(0, 0, 0, 0.55);
       border: 1px solid rgba(59, 130, 246, 0.35);
       max-width: 650px;
       margin: auto;
@@ -326,7 +415,9 @@
       font-weight: 600;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 13px 16px;
       margin-bottom: 20px;
@@ -339,9 +430,14 @@
       transition: all 0.2s;
     }
 
-    input::placeholder, textarea::placeholder { color: #94a3b8; }
-    
-    input:focus, select:focus, textarea:focus {
+    input::placeholder,
+    textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
       outline: none;
       border-color: #38bdf8;
       background: #090d16;
@@ -385,172 +481,379 @@
 
     footer p { margin: 5px 0; }
 
-    @media (max-width: 950px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 650px) {
-      .hero-showcase-bg { padding: 60px 16px 70px; }
-      .btn { width: 100%; max-width: 320px; }
-      section { padding: 65px 16px; }
-      .grid { grid-template-columns: 1fr; }
-      .card { aspect-ratio: auto; min-height: 230px; padding: 30px 22px; }
-      form { padding: 28px 20px; }
-      .about { padding: 30px 22px; }
+    /* CHATBOT */
+    #eds-cb-container {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999999 !important;
+      font-family: 'Inter', Arial, sans-serif;
     }
 
-    /* ==========================================================================
-       Epic Digital Solutions Isolated Custom Chatbot CSS Sheet
-       ========================================================================== */
-    #eds-cb-container {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        z-index: 999999 !important;
-        font-family: 'Inter', Arial, sans-serif;
-    }
     #eds-cb-button {
-        width: 60px;
-        height: 60px;
-        background-color: #06b6d4; 
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        transition: transform 0.2s ease;
+      width: 60px;
+      height: 60px;
+      background-color: #06b6d4;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
     }
-    #eds-cb-button:hover { transform: scale(1.1); }
-    #eds-cb-icon { color: white; font-size: 28px; }
+
+    #eds-cb-button:hover {
+      transform: scale(1.1);
+    }
+
+    #eds-cb-icon {
+      color: white;
+      font-size: 28px;
+    }
 
     #eds-cb-box {
-        width: 330px;
-        height: 450px;
-        background-color: #0f172a; 
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        display: flex !important;
-        flex-direction: column !important;
-        overflow: hidden;
-        position: absolute;
-        bottom: 75px;
-        right: 0;
-        transition: all 0.3s ease;
-        border: 1px solid #1e293b;
+      width: 330px;
+      height: 450px;
+      background-color: #0f172a;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      display: flex !important;
+      flex-direction: column !important;
+      overflow: hidden;
+      position: absolute;
+      bottom: 75px;
+      right: 0;
+      transition: all 0.3s ease;
+      border: 1px solid #1e293b;
     }
+
     .eds-cb-hidden {
-        display: none !important;
-        opacity: 0;
-        transform: translateY(20px);
+      display: none !important;
+      opacity: 0;
+      transform: translateY(20px);
     }
+
     #eds-cb-header {
-        background-color: #1e293b;
-        color: white;
-        padding: 15px;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        border-bottom: 1px solid #334155;
+      background-color: #1e293b;
+      color: white;
+      padding: 15px;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      border-bottom: 1px solid #334155;
     }
-    #eds-cb-header h4 { margin: 0 !important; font-size: 16px !important; color: #67e8f9 !important; }
-    
-    #eds-cb-close-btn { 
-        background: none !important; 
-        border: none !important; 
-        color: #94a3b8 !important; 
-        font-size: 13px !important; 
-        cursor: pointer !important;
-        font-weight: 600 !important;
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
+
+    #eds-cb-header h4 {
+      margin: 0 !important;
+      font-size: 16px !important;
+      color: #67e8f9 !important;
     }
-    #eds-cb-close-btn:hover { color: white !important; }
+
+    #eds-cb-close-btn {
+      background: none !important;
+      border: none !important;
+      color: #94a3b8 !important;
+      font-size: 13px !important;
+      cursor: pointer !important;
+      font-weight: 600 !important;
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+    }
+
+    #eds-cb-close-btn:hover {
+      color: white !important;
+    }
 
     #eds-cb-messages {
-        flex: 1 !important;
-        padding: 15px !important;
-        overflow-y: auto !important;
-        background-color: #0f172a !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
+      flex: 1 !important;
+      padding: 15px !important;
+      overflow-y: auto !important;
+      background-color: #0f172a !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
     }
-    .eds-cb-msg { padding: 10px 14px !important; border-radius: 15px !important; font-size: 14px !important; max-width: 80% !important; line-height: 1.4 !important; }
-    .eds-cb-bot { background-color: #1e293b !important; color: #e2e8f0 !important; align-self: flex-start !important; border-top-left-radius: 0 !important; }
-    .eds-cb-user { background-color: #06b6d4 !important; color: white !important; align-self: flex-end !important; border-top-right-radius: 0 !important; }
 
-    #eds-cb-input-area { 
-        padding: 10px 12px !important; 
-        border-top: 1px solid #1e293b !important; 
-        display: flex !important; 
-        background: #1e293b !important;
-        gap: 8px !important;
-        align-items: center !important;
-        box-sizing: border-box !important;
+    .eds-cb-msg {
+      padding: 10px 14px !important;
+      border-radius: 15px !important;
+      font-size: 14px !important;
+      max-width: 80% !important;
+      line-height: 1.4 !important;
     }
-    #eds-cb-user-input { 
-        flex: 1 !important; 
-        width: 75% !important;
-        padding: 8px 14px !important; 
-        margin-bottom: 0 !important; 
-        border: 1px solid #334155 !important; 
-        background-color: #0f172a !important; 
-        color: #ffffff !important; 
-        caret-color: #06b6d4 !important; 
-        border-radius: 20px !important; 
-        outline: none !important;
-        font-size: 14px !important;
-        height: 36px !important;
-        box-sizing: border-box !important;
+
+    .eds-cb-bot {
+      background-color: #1e293b !important;
+      color: #e2e8f0 !important;
+      align-self: flex-start !important;
+      border-top-left-radius: 0 !important;
     }
+
+    .eds-cb-user {
+      background-color: #06b6d4 !important;
+      color: white !important;
+      align-self: flex-end !important;
+      border-top-right-radius: 0 !important;
+    }
+
+    #eds-cb-input-area {
+      padding: 10px 12px !important;
+      border-top: 1px solid #1e293b !important;
+      display: flex !important;
+      background: #1e293b !important;
+      gap: 8px !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+    }
+
+    #eds-cb-user-input {
+      flex: 1 !important;
+      width: 75% !important;
+      padding: 8px 14px !important;
+      margin-bottom: 0 !important;
+      border: 1px solid #334155 !important;
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+      caret-color: #06b6d4 !important;
+      border-radius: 20px !important;
+      outline: none !important;
+      font-size: 14px !important;
+      height: 36px !important;
+      box-sizing: border-box !important;
+    }
+
     #eds-cb-user-input:focus {
-        border-color: #06b6d4 !important;
-        box-shadow: 0 0 5px rgba(6, 182, 212, 0.5) !important;
+      border-color: #06b6d4 !important;
+      box-shadow: 0 0 5px rgba(6, 182, 212, 0.5) !important;
     }
-    #eds-cb-user-input::placeholder { 
-        color: #94a3b8 !important; 
+
+    #eds-cb-user-input::placeholder {
+      color: #94a3b8 !important;
     }
-    
-    #eds-cb-send-btn { 
-        background: linear-gradient(135deg, #2563eb, #06b6d4) !important; 
-        color: white !important; 
-        border: none !important; 
-        width: 36px !important;
-        height: 36px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        border-radius: 50% !important; 
-        cursor: pointer !important; 
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        box-shadow: none !important;
+
+    #eds-cb-send-btn {
+      background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+      color: white !important;
+      border: none !important;
+      width: 36px !important;
+      height: 36px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border-radius: 50% !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: none !important;
     }
-    #eds-cb-send-btn:hover { 
-        transform: scale(1.05); 
+
+    #eds-cb-send-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero-showcase-bg {
+        padding: 60px 16px 70px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      section {
+        padding: 65px 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        aspect-ratio: auto;
+        min-height: 230px;
+        padding: 30px 22px;
+      }
+
+      .what-card {
+        min-height: 260px;
+      }
+
+      .what-card-img {
+        height: 135px;
+      }
+
+      form {
+        padding: 28px 20px;
+      }
+
+      .about {
+        padding: 30px 22px;
+      }
+
+      #eds-cb-container {
+        right: 16px;
+        bottom: 16px;
+      }
+
+      #eds-cb-box {
+        width: calc(100vw - 32px);
+        right: 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header class="hero-showcase-bg">
     <div class="hero-content">
       <h1>Epic Digital Solutions</h1>
-      <p class="subtitle">Simple Websites. Smart Automations. Real Support.</p>
+      <p class="subtitle">Simple Websites. Smart Forms. Real Leads.</p>
       <a href="#contact" class="btn">Request a Free Quote</a>
+
       <div class="showcase-container">
         <img src="services-icons.png" alt="Epic Digital Solutions services showcase" class="showcase-img">
       </div>
     </div>
   </header>
 
+  <!-- WHAT WE DO SECTION -->
+  <section class="what-we-do-section">
+    <div class="section-inner">
+      <h2>What We Do</h2>
+
+      <div class="grid">
+
+        <div class="card what-card">
+          <div class="card-main-content">
+            <img src="website-creation.png" alt="Website Creation" class="what-card-img">
+            <h3>Website Creation</h3>
+            <p>One-page websites, landing pages, and business sites.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>Details</h4>
+            <ul>
+              <li>Mobile-friendly design</li>
+              <li>Contact or quote form</li>
+              <li>Social media links</li>
+              <li>Clean business layout</li>
+              <li>Basic search optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card what-card">
+          <div class="card-main-content">
+            <img src="chatbot-setup.png" alt="Chatbot Setup" class="what-card-img">
+            <h3>Chatbot Setup</h3>
+            <p>Simple chatbot tools that answer questions and capture leads.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>Details</h4>
+            <ul>
+              <li>FAQ auto-replies</li>
+              <li>Package and service answers</li>
+              <li>Lead capture prompts</li>
+              <li>Form or booking links</li>
+              <li>Website chatbot integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card what-card">
+          <div class="card-main-content">
+            <img src="digital-invitations.png" alt="Digital Invitations and RSVP" class="what-card-img">
+            <h3>Digital Invitations + RSVP</h3>
+            <p>Custom digital invites with RSVP tracking for events.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>Details</h4>
+            <ul>
+              <li>Birthday, wedding, and event invites</li>
+              <li>RSVP form setup</li>
+              <li>Guest response tracking</li>
+              <li>Email notifications</li>
+              <li>Shareable event link or QR code</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card what-card">
+          <div class="card-main-content">
+            <img src="lead-capture-forms.png" alt="Lead Capture Forms" class="what-card-img">
+            <h3>Lead Capture Forms</h3>
+            <p>Forms that collect customer info and send requests to you.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>Details</h4>
+            <ul>
+              <li>Quote request forms</li>
+              <li>Booking request forms</li>
+              <li>Contact forms</li>
+              <li>Email alerts</li>
+              <li>Organized customer responses</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card what-card">
+          <div class="card-main-content">
+            <img src="qr-code-marketing.png" alt="QR Code Marketing" class="what-card-img">
+            <h3>QR Code Marketing</h3>
+            <p>Custom QR codes for flyers, cards, events, and promotions.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>Details</h4>
+            <ul>
+              <li>QR code for websites</li>
+              <li>QR code for RSVP pages</li>
+              <li>QR code for quote forms</li>
+              <li>Printable and digital formats</li>
+              <li>Great for local marketing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card what-card">
+          <div class="card-main-content">
+            <img src="business-starter-kit.png" alt="Business Starter Kit" class="what-card-img">
+            <h3>Business Starter Kit</h3>
+            <p>A complete starter setup to help your business launch online.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>Details</h4>
+            <ul>
+              <li>One-page website</li>
+              <li>Lead capture form</li>
+              <li>QR code setup</li>
+              <li>Basic branding support</li>
+              <li>Launch support</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STARTER PACKAGES SECTION -->
   <section class="packages-section">
     <div class="section-inner">
       <h2>Starter Packages</h2>
+
       <div class="grid">
-        
+
         <div class="card">
           <div class="card-main-content">
             <h3>Starter Website</h3>
@@ -613,66 +916,75 @@
             <ul>
               <li>FAQ smart auto-replies</li>
               <li>24/7 lead collection tool</li>
-              <li>Simple workspace connection</li>
-              <li>No-code dashboard control</li>
+              <li>Simple website connection</li>
+              <li>Package and form routing</li>
             </ul>
           </div>
         </div>
 
         <div class="card">
           <div class="card-main-content">
-            <h3>Home Tech Setup</h3>
-            <p class="price-badge">Starting at $89</p>
-            <p>Professional setup for printers, computing devices, and workspace tools.</p>
+            <h3>QR Code Marketing Kit</h3>
+            <p class="price-badge">Starting at $49</p>
+            <p>Custom QR codes for flyers, business cards, events, and promotions.</p>
           </div>
           <div class="card-hover-details">
             <h4>What's Included</h4>
             <ul>
-              <li>All-in-one printer configuration</li>
-              <li>Wireless printing from phones/PCs</li>
-              <li>Software & driver installations</li>
-              <li>Basic device troubleshooting</li>
+              <li>Website QR code</li>
+              <li>Quote form QR code</li>
+              <li>Event or RSVP QR code</li>
+              <li>Printable and digital files</li>
             </ul>
           </div>
         </div>
 
         <div class="card">
           <div class="card-main-content">
-            <h3>Smart Home & Network</h3>
-            <p class="price-badge">Starting at $149</p>
-            <p>Complete home network optimization and smart ecosystem connection.</p>
+            <h3>Lead Form Setup</h3>
+            <p class="price-badge">Starting at $79</p>
+            <p>Simple forms that collect customer info and send alerts to you.</p>
           </div>
           <div class="card-hover-details">
             <h4>What's Included</h4>
             <ul>
-              <li>Wi-Fi network configurations</li>
-              <li>Smart TV & streaming setup</li>
-              <li>Google Home & Alexa integration</li>
-              <li>IoT device connections</li>
+              <li>Quote request form</li>
+              <li>Booking request form</li>
+              <li>Email notification setup</li>
+              <li>Organized response collection</li>
             </ul>
           </div>
         </div>
 
       </div>
+
       <p class="small-note">Final pricing depends on project size, features, and setup needs.</p>
     </div>
   </section>
 
+  <!-- WHY CHOOSE US SECTION -->
   <section class="why-section">
     <div class="section-inner">
       <h2>Why Choose Epic Digital Solutions?</h2>
+
       <div class="about">
         <p>
-          Epic Digital Solutions helps small businesses, event hosts, and everyday clients with practical digital tools. With years of hands-on technical service experience, we focus on clear communication, reliable support, and simple solutions that help people move forward without feeling overwhelmed by technology.
+          Epic Digital Solutions helps small businesses, creators, and event hosts get online fast with simple websites,
+          lead forms, QR codes, digital invitations, RSVP tracking, and chatbot support. We focus on clear communication,
+          clean design, and practical tools that help people collect leads and look professional without feeling overwhelmed
+          by technology.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT SECTION -->
   <section class="contact-section" id="contact">
     <div class="section-inner">
       <h2>Request a Free Quote</h2>
+
       <form id="my-form" action="https://formspree.io/f/xzdwygvr" method="POST">
+
         <label for="name">Your Name</label>
         <input id="name" name="name" type="text" placeholder="Your Name" required />
 
@@ -686,17 +998,18 @@
         <select id="service" name="service" required>
           <option value="">Select a service</option>
           <option>Website Creation</option>
-          <option>Digital Invitation</option>
+          <option>Digital Invitation + RSVP</option>
           <option>Chatbot Setup</option>
-          <option>Tech Setup Support</option>
+          <option>Lead Capture Form</option>
+          <option>QR Code Marketing Kit</option>
           <option>Business Starter Kit</option>
-          <option>Smart Home & Network Setup</option>
         </select>
 
         <label for="message">Project Details</label>
         <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
 
         <button type="submit">Send Request</button>
+
       </form>
     </div>
   </section>
@@ -706,118 +1019,201 @@
     <p>Powered by the Epic brand.</p>
   </footer>
 
+  <!-- CHATBOT -->
   <div id="eds-cb-container">
-      <div id="eds-cb-button" onclick="toggleChat()">
-          <span id="eds-cb-icon">💬</span>
+    <div id="eds-cb-button" onclick="toggleChat()">
+      <span id="eds-cb-icon">💬</span>
+    </div>
+
+    <div id="eds-cb-box" class="eds-cb-hidden">
+      <div id="eds-cb-header">
+        <h4>EDS Digital Assistant</h4>
+        <button id="eds-cb-close-btn" onclick="toggleChat()">End Chat ×</button>
       </div>
-      
-      <div id="eds-cb-box" class="eds-cb-hidden">
-          <div id="eds-cb-header">
-              <h4>EDS Digital Assistant</h4>
-              <button id="eds-cb-close-btn" onclick="toggleChat()">End Chat ×</button>
-          </div>
-          <div id="eds-cb-messages">
-              <div class="eds-cb-msg eds-cb-bot">Hello! Welcome to Epic Digital Solutions. How can I help you build your digital presence today? Type "packages" to see what we offer!</div>
-          </div>
-          <div id="eds-cb-input-area">
-              <input type="text" id="eds-cb-user-input" placeholder="Ask about packages..." onkeypress="handleKeyPress(event)" autocomplete="off">
-              <button id="eds-cb-send-btn" onclick="sendMessage()">➔</button>
-          </div>
+
+      <div id="eds-cb-messages">
+        <div class="eds-cb-msg eds-cb-bot">
+          Hello! Welcome to Epic Digital Solutions. I can help with websites, QR codes, digital invites, RSVP tracking, lead forms, and chatbot setup. Type "packages" to see what we offer.
+        </div>
       </div>
+
+      <div id="eds-cb-input-area">
+        <input
+          type="text"
+          id="eds-cb-user-input"
+          placeholder="Ask about packages..."
+          onkeypress="handleKeyPress(event)"
+          autocomplete="off"
+        >
+        <button id="eds-cb-send-btn" onclick="sendMessage()">➔</button>
+      </div>
+    </div>
   </div>
 
   <script>
     var form = document.getElementById("my-form");
+
     async function handleSubmit(event) {
       event.preventDefault();
+
       var data = new FormData(event.target);
+
       fetch(event.target.action, {
         method: form.method,
         body: data,
-        headers: {'Accept': 'application/json'}
+        headers: { 'Accept': 'application/json' }
       }).then(response => {
         if (response.ok) {
-          form.innerHTML = "<h2 style='color:#67e8f9; text-align:center;'>Request Received!</h2><p style='text-align:center;'>Thanks for reaching out to Epic Digital Solutions. I’ll review your request and follow up with you shortly.</p>"; 
+          form.innerHTML = `
+            <h2 style="color:#67e8f9; text-align:center;">Request Received!</h2>
+            <p style="text-align:center;">
+              Thanks for reaching out to Epic Digital Solutions. I’ll review your request and follow up with you shortly.
+            </p>
+          `;
         } else {
-          form.innerHTML = "<p style='text-align:center;'>Oops! There was a problem submitting your form. Please try again.</p>";
+          form.innerHTML = `
+            <p style="text-align:center;">
+              Oops! There was a problem submitting your form. Please try again.
+            </p>
+          `;
         }
       });
     }
+
     form.addEventListener("submit", handleSubmit);
 
     function toggleChat() {
-        const chatBox = document.getElementById('eds-cb-box');
-        chatBox.classList.toggle('eds-cb-hidden');
+      const chatBox = document.getElementById('eds-cb-box');
+      chatBox.classList.toggle('eds-cb-hidden');
     }
 
     function handleKeyPress(event) {
-        if (event.key === 'Enter') { sendMessage(); }
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
     }
 
     function sendMessage() {
-        const inputEl = document.getElementById('eds-cb-user-input');
-        const messageText = inputEl.value.trim();
-        if (messageText === '') return;
+      const inputEl = document.getElementById('eds-cb-user-input');
+      const messageText = inputEl.value.trim();
 
-        appendMessage(messageText, 'eds-cb-user');
-        inputEl.value = '';
+      if (messageText === '') return;
 
-        setTimeout(() => {
-            const botResponse = getBotResponse(messageText);
-            appendMessage(botResponse, 'eds-cb-bot');
-        }, 400);
+      appendMessage(messageText, 'eds-cb-user');
+      inputEl.value = '';
+
+      setTimeout(() => {
+        const botResponse = getBotResponse(messageText);
+        appendMessage(botResponse, 'eds-cb-bot');
+      }, 400);
     }
 
     function appendMessage(text, className) {
-        const msgContainer = document.getElementById('eds-cb-messages');
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `eds-cb-msg ${className}`;
-        msgDiv.innerText = text;
-        msgContainer.appendChild(msgDiv);
-        msgContainer.scrollTop = msgContainer.scrollHeight;
+      const msgContainer = document.getElementById('eds-cb-messages');
+      const msgDiv = document.createElement('div');
+
+      msgDiv.className = `eds-cb-msg ${className}`;
+      msgDiv.innerText = text;
+
+      msgContainer.appendChild(msgDiv);
+      msgContainer.scrollTop = msgContainer.scrollHeight;
     }
 
     function getBotResponse(input) {
-        const query = input.toLowerCase();
+      const query = input.toLowerCase();
 
-        // Theme 1: Packages, Options, Pricing, Fees, Cost
-        if (query.includes('package') || query.includes('service') || query.includes('price') || query.includes('pricing') || query.includes('cost') || query.includes('how much')) {
-            return "We offer high-value local tech solutions:\n• Starter Website ($199)\n• Digital Invite + RSVP ($75)\n• Business Starter Kit ($299)\n• Chatbot Add-On ($99)\n• Home Tech & Network Optimization.\n\nWhich one fits what you're looking for?";
-        }
-        
-        // Theme 2: Custom Work, Tailored Designs, Free-Form Requests
-        if (query.includes('custom') || query.includes('own design') || query.includes('make it mine') || query.includes('different layout') || query.includes('tailor')) {
-            return "Absolutely! Every project we build can be completely customized to match your exact business branding, layout ideas, color preferences, and personal style. We build assets tailored directly to your vision!";
-        }
+      if (
+        query.includes('package') ||
+        query.includes('service') ||
+        query.includes('price') ||
+        query.includes('pricing') ||
+        query.includes('cost') ||
+        query.includes('how much')
+      ) {
+        return "We offer digital setup services:\n• Starter Website ($199)\n• Digital Invite + RSVP ($75)\n• Business Starter Kit ($299)\n• Chatbot Add-On ($99)\n• QR Code Marketing Kit ($49)\n• Lead Form Setup ($79)\n\nWhich one fits what you're building?";
+      }
 
-        // Theme 3: Websites, Pages, Landing Page
-        if (query.includes('web') || query.includes('site') || query.includes('page') || query.includes('portfolio')) {
-            return "Our Starter Website ($199) delivers a high-converting, mobile-responsive layout built to turn local visitors into leads. It includes optimization fundamentals and complete social link integrations.";
-        }
+      if (
+        query.includes('custom') ||
+        query.includes('own design') ||
+        query.includes('make it mine') ||
+        query.includes('different layout') ||
+        query.includes('tailor')
+      ) {
+        return "Yes. Projects can be customized to match your business branding, event theme, colors, layout ideas, and personal style.";
+      }
 
-        // Theme 4: Events, Invitations, RSVPs, Parties
-        if (query.includes('invite') || query.includes('rsvp') || query.includes('event') || query.includes('wedding') || query.includes('party')) {
-            return "Our Digital Invite + RSVP asset ($75) gives your event a beautiful dedicated landing theme. It includes a live guest tracker, automatic RSVP updates, and real-time email alerts.";
-        }
+      if (
+        query.includes('web') ||
+        query.includes('site') ||
+        query.includes('page') ||
+        query.includes('portfolio') ||
+        query.includes('landing')
+      ) {
+        return "Our Starter Website starts at $199. It is designed for small businesses, creators, and event hosts who need a clean mobile-friendly online presence with a quote or contact form.";
+      }
 
-        // Theme 5: Premium Business Kits
-        if (query.includes('kit') || query.includes('business starter') || query.includes('premium') || query.includes('qr')) {
-            return "The Business Starter Kit ($299) is our most popular option. It covers a full 1-page business build, high-visibility customer quote forms, and personalized scannable QR codes for your marketing.";
-        }
+      if (
+        query.includes('invite') ||
+        query.includes('rsvp') ||
+        query.includes('event') ||
+        query.includes('wedding') ||
+        query.includes('party') ||
+        query.includes('birthday')
+      ) {
+        return "Our Digital Invite + RSVP setup starts at $75. It includes a custom digital invitation, RSVP form, guest tracking, and a shareable link or QR code.";
+      }
 
-        // Theme 6: Technical Support, Wi-Fi, Networks, Printers
-        if (query.includes('tech') || query.includes('network') || query.includes('printer') || query.includes('wifi') || query.includes('wi-fi') || query.includes('router') || query.includes('device')) {
-            return "We specialize in hands-on local technical configurations. We fix printer driver issues ($89) and optimize whole-home smart networks or streaming setups ($149) to keep your connectivity fast and stable.";
-        }
+      if (
+        query.includes('kit') ||
+        query.includes('business starter') ||
+        query.includes('premium') ||
+        query.includes('launch')
+      ) {
+        return "The Business Starter Kit starts at $299. It includes a one-page website, lead capture form, QR code setup, basic branding support, and launch support.";
+      }
 
-        // Theme 7: Moving Forward, Free Quotes, Consultation
-        if (query.includes('contact') || query.includes('quote') || query.includes('hire') || query.includes('start') || query.includes('call') || query.includes('form')) {
-            return "Let's bring your project to life! Scroll down right on this page to our 'Request a Free Quote' form, type in your goals, and we'll review it and reach back out to you within 24 hours!";
-        }
+      if (
+        query.includes('qr') ||
+        query.includes('flyer') ||
+        query.includes('business card') ||
+        query.includes('scan')
+      ) {
+        return "The QR Code Marketing Kit starts at $49. We can create QR codes for your website, quote form, RSVP page, event invite, flyer, or business card.";
+      }
 
-        // Conversational Fallback
-        return "I want to make sure I give you the right info! I can break down our digital website choices, invitation trackers, tech support packages, or custom design options. What are you building today?";
+      if (
+        query.includes('form') ||
+        query.includes('lead') ||
+        query.includes('booking') ||
+        query.includes('quote request') ||
+        query.includes('contact form')
+      ) {
+        return "Lead Form Setup starts at $79. We can create quote forms, booking forms, contact forms, and email alerts so customer requests go directly to you.";
+      }
+
+      if (
+        query.includes('chatbot') ||
+        query.includes('bot') ||
+        query.includes('auto reply') ||
+        query.includes('automation')
+      ) {
+        return "The Chatbot Add-On starts at $99. It can answer common questions, explain your services, guide visitors to forms, and help collect leads.";
+      }
+
+      if (
+        query.includes('contact') ||
+        query.includes('quote') ||
+        query.includes('hire') ||
+        query.includes('start') ||
+        query.includes('call')
+      ) {
+        return "You can request a free quote by using the form on this page. Tell us what you need built and we’ll follow up with next steps.";
+      }
+
+      return "I can help explain our websites, digital invites with RSVP, lead forms, QR codes, chatbot setup, or business starter kits. What are you trying to build?";
     }
   </script>
+
 </body>
 </html>
